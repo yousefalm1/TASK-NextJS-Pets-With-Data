@@ -28,14 +28,10 @@ function Navbar() {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 <NavLink href="/">
-                  <p className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Home
-                  </p>
+                  Home
                 </NavLink>
                 <NavLink href="/pets">
-                  <p className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Pets
-                  </p>
+                  Pets
                 </NavLink>
               </div>
             </div>
@@ -89,19 +85,11 @@ function Navbar() {
       {isOpen && (
         <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <NavLink href="/">
-              <p
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Home
-              </p>
+            <NavLink href="/" block>
+              Home
             </NavLink>
-            <NavLink href="/pets">
-              <p
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Pets
-              </p>
+            <NavLink href="/pets" block>
+              Pets
             </NavLink>
           </div>
         </div>
