@@ -5,8 +5,3 @@
 body {
   background-color: #f9e3be;
 }
-.active {
-  background-color: grey;
-  color: white;
-  border: 1px solid white;
-}
