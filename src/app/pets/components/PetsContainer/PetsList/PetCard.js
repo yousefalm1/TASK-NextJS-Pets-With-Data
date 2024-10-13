@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function PetCard({ pet }) {
   return (
@@ -11,9 +12,9 @@ function PetCard({ pet }) {
         width={200}
         height={200}
       />
-      <button className=" border border-black px-5 py-1 rounded-md hover:bg-[black] hover:text-white">
+      <Link href={`/pets/${pet.id}`} className="border border-black px-5 py-1 rounded-md hover:bg-[black] hover:text-white">
         View
-      </button>
+      </Link>
     </div>
   );
 };
