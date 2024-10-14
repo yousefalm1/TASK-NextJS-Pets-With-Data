@@ -11,7 +11,6 @@ function ImageWithFallback(props) {
     src={src}
     onError={() => setSrc(placeholder)}
   />
-
 }
 
 export default ImageWithFallback
