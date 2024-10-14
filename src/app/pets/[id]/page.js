@@ -2,6 +2,8 @@ import ImageWithFallback from "@/components/ImageWithFallback";
 import pets from "@/data/pets";
 import { redirect } from "next/navigation";
 
+import ActionButtons from "./components/ActionButtons";
+
 function PetDetailPage({ params }) {
   const pet = pets.find(pet => pet.id === +params.id);
 
@@ -24,14 +26,7 @@ function PetDetailPage({ params }) {
           <h1>Name: {name}</h1>
           <h1>Type: {type}</h1>
           <h1>adopted: {adopted ? "yes" : "no"}</h1>
-
-          {!adopted && <button className="w-[70px] border border-black rounded-md  hover:bg-green-400 my-5">
-            Adobt
-          </button>}
-
-          <button className="w-[70px] border border-black rounded-md  hover:bg-red-400">
-            Delete
-          </button>
+          <ActionButtons pet={pet} />
         </div>
       </div>
     </div>
