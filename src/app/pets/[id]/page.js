@@ -2,7 +2,7 @@ import ImageWithFallback from "@/components/ImageWithFallback";
 import pets from "@/data/pets";
 import { redirect } from "next/navigation";
 
-const PetDetailPage = ({ params }) => {
+function PetDetailPage({ params }) {
   const pet = pets.find(pet => pet.id === +params.id);
 
   if (!pet) redirect('/pets');
