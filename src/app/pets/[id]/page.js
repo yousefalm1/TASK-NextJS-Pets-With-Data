@@ -1,5 +1,5 @@
+import ImageWithFallback from "@/components/ImageWithFallback";
 import pets from "@/data/pets";
-import Image from "next/image";
 import { redirect } from "next/navigation";
 
 const PetDetailPage = ({ params }) => {
@@ -12,7 +12,7 @@ const PetDetailPage = ({ params }) => {
     <div className="w-screen h-[90vh] flex justify-center items-center">
       <div className="border border-black rounded-md w-[70%] h-[70%] overflow-hidden flex flex-col md:flex-row p-5">
         <div className="h-full w-full md:w-[35%]">
-          <Image
+          <ImageWithFallback
             src={image}
             alt={name}
             className="object-contain w-full h-full"
