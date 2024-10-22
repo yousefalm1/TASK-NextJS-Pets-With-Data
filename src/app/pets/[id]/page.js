@@ -4,12 +4,14 @@ import { redirect } from "next/navigation";
 
 import ActionButtons from "./components/ActionButtons";
 
-function PetDetailPage({ params }) {
-  const pet = pets.find(pet => pet.id === +params.id);
+async function PetDetailPage({ params }) {
+  const { id } = await params;
+  const pet = pets.find((pet) => pet.id === +id);
 
-  if (!pet) redirect('/pets');
+  if (!pet) redirect("/pets");
 
   const { image, name, type, adopted } = pet;
+
   return (
     <div className="w-screen h-[90vh] flex justify-center items-center">
       <div className="border border-black rounded-md w-[70%] h-[70%] overflow-hidden flex flex-col md:flex-row p-5">
@@ -31,6 +33,6 @@ function PetDetailPage({ params }) {
       </div>
     </div>
   );
-};
+}
 
 export default PetDetailPage;
