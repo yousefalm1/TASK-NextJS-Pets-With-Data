@@ -1,6 +1,6 @@
-import "./globals.css";
+import './globals.css';
 
-import Navbar from "@/components/Navbar";
+import Navbar from '@/components/Navbar';
 
 export default function RootLayout({ children }) {
   return (
@@ -12,3 +12,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+export const fetchCache = 'default-cache';

@@ -1,14 +1,12 @@
-import ImageWithFallback from "@/components/ImageWithFallback";
-import pets from "@/data/pets";
-import { redirect } from "next/navigation";
+import ImageWithFallback from '@/components/ImageWithFallback';
+import { fetchingPetsDetails } from '@/actions';
 
-import ActionButtons from "./components/ActionButtons";
+import ActionButtons from './components/ActionButtons';
 
 async function PetDetailPage({ params }) {
   const { id } = await params;
-  const pet = pets.find((pet) => pet.id === +id);
 
-  if (!pet) redirect("/pets");
+  let pet = await fetchingPetsDetails(id);
 
   const { image, name, type, adopted } = pet;
 
@@ -27,7 +25,7 @@ async function PetDetailPage({ params }) {
         <div className="w-full md:w-[65%] h-full pt-[30px] flex flex-col p-3">
           <h1>Name: {name}</h1>
           <h1>Type: {type}</h1>
-          <h1>adopted: {adopted ? "yes" : "no"}</h1>
+          <h1>adopted: {adopted ? 'yes' : 'no'}</h1>
           <ActionButtons pet={pet} />
         </div>
       </div>
